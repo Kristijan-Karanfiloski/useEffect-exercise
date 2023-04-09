@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
+  const [resourceType, setResourceType] = useState("posts");
+  const [items, setItems] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    //CLEANUP function
+
+    return () => {
+      window.addEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      .then((json) => setItems(json));
+  }, [resourceType]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className="displayWidth">Width of screen:{windowWidth}</div>
+
+      <div className="wrapper">
+        <div className="btn-div">
+          <button onClick={() => setResourceType("posts")}>Posts</button>
+          <button onClick={() => setResourceType("users")}>Users</button>
+          <button onClick={() => setResourceType("comments")}>Comments</button>
+        </div>
+      </div>
+      <h1>{resourceType}</h1>
+      <div className="data">
+        {items.map((item) => {
+          return <p>{JSON.stringify(item)}</p>;
+        })}
+      </div>
+    </React.Fragment>
   );
 }
 

@@ -1,38 +1,97 @@
-.App {
+:root {
+  /* colors */
+  --fill: #a972cb;
+  --pulse: #ef6eae;
+  --close: #ff7f82;
+  --raise: #ffa260;
+  --up: #e4cb58;
+  --slide: #8fc866;
+  --offset: #19bc8b;
+}
+
+body {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 0 5rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  /* border: 2px solid red; */
+  text-align: start;
+  padding-left: 10rem;
+}
+
+button {
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.wrapper {
+  min-width: 600px;
+  min-height: 200px;
+  /* border: 5px solid blue; */
+}
+
+.btn-div {
+  /* background: green; */
+  margin-top: 4rem;
+  padding: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button:first-child {
+  border: 2px solid var(--pulse);
+  background: black;
+  color: var(--pulse);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:first-child:hover {
+  border: 2px solid var(--raise);
+  background: black;
+  color: var(--raise);
+  transform: translateY(-0.25em);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:nth-child(2) {
+  border: 2px solid var(--offset);
+  background: black;
+  color: var(--offset);
 }
 
-.App-link {
-  color: #61dafb;
+button:nth-child(2):hover {
+  border: 2px solid var(--slide);
+  background: black;
+  color: var(--slide);
+  transform: translateY(-0.25em);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:last-child {
+  border: 2px solid var(--up);
+  background: black;
+  color: var(--up);
+}
+
+button:last-child:hover {
+  border: 2px solid #c8ff00;
+  background: black;
+  color: #c8ff00;
+  transform: translateY(-0.25em);
+}
+
+.data {
+  border: 3px solid goldenrod;
+  width: 100%;
+  overflow: hidden;
+  /* word-wrap: break-word; */
+}
+
+.displayWidth {
+  border: 3px solid yellow;
+  padding: 2rem 0;
+  text-align: center;
 }
