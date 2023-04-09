@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kikaccc29.github.io/useEffect-exercise/static/css/main.ce1dc582.css",
+    "main.js": "/kikaccc29.github.io/useEffect-exercise/static/js/main.b69ed714.js",
+    "index.html": "/kikaccc29.github.io/useEffect-exercise/index.html",
+    "main.ce1dc582.css.map": "/kikaccc29.github.io/useEffect-exercise/static/css/main.ce1dc582.css.map",
+    "main.b69ed714.js.map": "/kikaccc29.github.io/useEffect-exercise/static/js/main.b69ed714.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce1dc582.css",
+    "static/js/main.b69ed714.js"
+  ]
+}
